@@ -5,3 +5,5 @@ function getComputerChoice() {
 function getHumanChoice() {
     return prompt("Make your pick: Rock, Paper or Scissors.").toLowerCase().trim();
 }
+
+let humanScore = computerScore = 0;
