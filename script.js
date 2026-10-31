@@ -9,30 +9,48 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
+    console.log(`You pick ${humanChoice}`);
+    console.log(`Computer picks ${computerChoice}`);
+    alert(`You pick ${humanChoice}\nComputer picks ${computerChoice}`);
+
     if (humanChoice === computerChoice) {
         console.log(`It's a tie! Both are ${humanChoice}`);
+        alert(`It's a tie! Both are ${humanChoice}`);
     } else if (humanChoice === "rock" && computerChoice === "paper") {
         console.log("You lose... Paper beats Rock.");
+        alert("You lose... Paper beats Rock.");
         computerChoice++;
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
         console.log("You win! Rock beats Scissors.");
+        alert("You win! Rock beats Scissors.");
         humanChoice++;
     } else if (humanChoice === "paper" && computerChoice === "rock") {
         console.log("You win! Paper beats Rock.");
+        alert("You win! Paper beats Rock.");
         humanChoice++;
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
         console.log("You lose... Scissors beat Paper.");
+        alert("You lose... Scissors beat Paper.");
         computerChoice++;
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
         console.log("You lose... Rock beats Scissors.");
+        alert("You lose... Rock beats Scissors.");
         computerChoice++;
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
         console.log("You win! Scissors beat Paper.");
+        alert("You win! Scissors beat Paper.");
         humanChoice++;
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+        playRound(humanSelection, computerSelection);
+    }
+}
+
+playGame();
+
